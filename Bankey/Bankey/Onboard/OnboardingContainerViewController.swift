@@ -19,9 +19,10 @@ class OnboardingContainerViewController: UIViewController {
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         self.pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
 
-        let page1 = ViewController1()
-        let page2 = ViewController2()
-        let page3 = ViewController3()
+
+        let page1 = OnboardingViewController(imageName: "skull1", description: "The skull is a rigid structure made of 22 bones that form the head of a vertebrate. It protects the brain and supports the structures of the face. The skull consists of the cranium, which encases the brain, and the facial bones, including the jaw and cheekbones.")
+        let page2 = OnboardingViewController(imageName: "skull2", description: "A skull is a haunting yet captivating symbol often depicted with hollow eye sockets, a sharp nasal cavity, and a toothy grin. Its stark, bony form embodies themes of mortality and resilience, frequently featured in art, tattoos, and gothic designs")
+        let page3 = OnboardingViewController(imageName: "skull3", description: "The skull represents both the fragility of life and the inevitability of death. It is a universal emblem in many cultures, symbolizing transformation, strength, and the transient nature of existence.")
 
         pages.append(page1)
         pages.append(page2)
@@ -38,15 +39,14 @@ class OnboardingContainerViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        view.backgroundColor = .systemPurple
-
+        self.setupPageControl()
         addChild(pageViewController)
         view.addSubview(pageViewController.view)
         pageViewController.didMove(toParent: self)
 
         pageViewController.dataSource = self
         pageViewController.view.translatesAutoresizingMaskIntoConstraints = false
+     
 
         NSLayoutConstraint.activate([
             view.topAnchor.constraint(equalTo: pageViewController.view.topAnchor),
@@ -55,7 +55,7 @@ class OnboardingContainerViewController: UIViewController {
             view.bottomAnchor.constraint(equalTo: pageViewController.view.bottomAnchor),
         ])
 
-        pageViewController.setViewControllers([pages.first!], direction: .forward, animated: false, completion: nil)
+        pageViewController.setViewControllers([pages.first!], direction: .forward, animated: true, completion: nil)
         currentVC = pages.first!
     }
 }
@@ -90,26 +90,8 @@ extension OnboardingContainerViewController: UIPageViewControllerDataSource {
     func presentationIndex(for pageViewController: UIPageViewController) -> Int {
         return pages.firstIndex(of: self.currentVC) ?? 0
     }
-}
-
-// MARK: - ViewControllers
-class ViewController1: UIViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .systemRed
-    }
-}
-
-class ViewController2: UIViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .systemGreen
-    }
-}
-
-class ViewController3: UIViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .systemBlue
+    func setupPageControl(){
+        UIPageControl.appearance(whenContainedInInstancesOf: [OnboardingContainerViewController.self]).currentPageIndicatorTintColor = .green
+        UIPageControl.appearance(whenContainedInInstancesOf: [OnboardingContainerViewController.self]).pageIndicatorTintColor = .lightGray
     }
 }
