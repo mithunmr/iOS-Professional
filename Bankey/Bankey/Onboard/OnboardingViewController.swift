@@ -9,13 +9,10 @@
 import UIKit
 
 class OnboardingViewController: UIViewController {
-    let closeButton = UIButton()
+
     let stackView = UIStackView()
     let imageView = UIImageView()
     let descriptionLabel = UILabel()
-    let prevButton = UIButton()
-    let nextButton = UIButton()
-
     let imageName: String
     let imageDescription: String
 
@@ -40,9 +37,8 @@ class OnboardingViewController: UIViewController {
 
 extension OnboardingViewController {
     private func style() {
-        closeButton.translatesAutoresizingMaskIntoConstraints = false
-        closeButton.titleLabel?.text = "Close"
-        closeButton.backgroundColor = .blue
+
+
 
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
@@ -58,29 +54,14 @@ extension OnboardingViewController {
         descriptionLabel.textAlignment = .center
         descriptionLabel.text = imageDescription
 
-        prevButton.translatesAutoresizingMaskIntoConstraints = false
-        prevButton.titleLabel?.text = "Previous"
-        nextButton.backgroundColor = .red
-
-        nextButton.translatesAutoresizingMaskIntoConstraints = false
-        nextButton.titleLabel?.text = "Next"
-        nextButton.backgroundColor = .green
     }
 
     private func layout() {
-        view.addSubview(closeButton)
         view.addSubview(stackView)
-        view.addSubview(prevButton)
-        view.addSubview(nextButton)
 
 
         stackView.addArrangedSubview(imageView)
         stackView.addArrangedSubview(descriptionLabel)
-
-        NSLayoutConstraint.activate([
-            closeButton.topAnchor.constraint(equalToSystemSpacingBelow: view.topAnchor, multiplier: 1),
-            closeButton.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 1)
-        ])
 
         NSLayoutConstraint.activate([
             stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
@@ -91,18 +72,6 @@ extension OnboardingViewController {
         NSLayoutConstraint.activate([
             imageView.heightAnchor.constraint(equalToConstant: 200),
             imageView.widthAnchor.constraint(equalToConstant: 200)
-        ])
-
-        NSLayoutConstraint.activate([
-            prevButton.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 1),
-            view.bottomAnchor.constraint(equalToSystemSpacingBelow: prevButton.bottomAnchor, multiplier: 1)
-
-        ])
-
-        NSLayoutConstraint.activate([
-            view.trailingAnchor.constraint(equalToSystemSpacingAfter: nextButton.trailingAnchor, multiplier: 1),
-            view.bottomAnchor.constraint(equalToSystemSpacingBelow: prevButton.bottomAnchor, multiplier: 1)
-
         ])
 
     }
