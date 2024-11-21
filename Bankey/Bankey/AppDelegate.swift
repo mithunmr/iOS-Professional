@@ -17,8 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         window?.backgroundColor = .systemBackground
-
-        if LocalState.isLoggedin{
+        if LocalState.isLoggedin {
             if LocalState.hasOnboarded {
                 window?.rootViewController = mainViewController
             } else {
@@ -29,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             loginViewController.loginViewControllerDelegate = self
             window?.rootViewController = loginViewController
         }
-
+        AppAppearance.setStatusBar()
         return true
     }
 }
@@ -48,3 +47,5 @@ extension AppDelegate: OnboardingContainerViewControllerDelegate {
         window?.rootViewController = mainViewController
     }
 }
+
+

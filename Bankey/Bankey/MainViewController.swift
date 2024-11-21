@@ -44,16 +44,12 @@ class MainViewController: UITabBarController {
     }
 
     private func setupTabBar() {
-        tabBar.tintColor = .red
+        tabBar.tintColor = .black
         tabBar.isTranslucent = false
     }
 }
 
-class AccountSummaryViewController: UIViewController {
-    override func viewDidLoad() {
-        view.backgroundColor = .systemGreen
-    }
-}
+
 
 class MoveMoneyViewController: UIViewController {
     override func viewDidLoad() {

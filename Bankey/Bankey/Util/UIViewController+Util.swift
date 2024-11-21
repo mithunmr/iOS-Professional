@@ -6,15 +6,9 @@
 //
 
 import UIKit
+import WebKit
 extension UIViewController {
-    func setStatusBar() {
-        let statusBarSize = UIApplication.shared.statusBarFrame.size
-        let frame = CGRect(origin: .zero, size: statusBarSize)
-        let statusbarView = UIView(frame: frame)
 
-        statusbarView.backgroundColor = .red
-        view.addSubview(statusbarView)
-    }
 
     func setTabBarImage(imageName: String, title: String) {
         let configuration = UIImage.SymbolConfiguration(scale: .large)
