@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AccountSummaryHeaderView" customModule="Bankey" customModuleProvider="target">
+            <connections>
+                <outlet property="descriptioon" destination="mnp-5J-aQU" id="kyC-z1-EuU"/>
+                <outlet property="image" destination="ckM-xs-2wT" id="OPp-Vk-R9R"/>
+                <outlet property="label" destination="aaj-ZS-t2V" id="7os-sK-cla"/>
+                <outlet property="view" destination="iN0-l3-epB" id="Jev-zk-Oqj"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view tag="1" contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="370" height="466"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="skull3" translatesAutoresizingMaskIntoConstraints="NO" id="ckM-xs-2wT">
+                    <rect key="frame" x="16" y="16" width="150" height="150"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="150" id="Ui7-c5-Chd"/>
+                        <constraint firstAttribute="height" constant="150" id="ikZ-m9-Pjt"/>
+                    </constraints>
+                </imageView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="2EI-MW-NkM">
+                    <rect key="frame" x="16" y="182" width="338" height="268"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Skull" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aaj-ZS-t2V">
+                            <rect key="frame" x="0.0" y="0.0" width="338" height="20.333333333333332"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mnp-5J-aQU">
+                            <rect key="frame" x="0.0" y="28.333333333333357" width="338" height="239.66666666666663"/>
+                            <string key="text">The skull is a rigid structure made of 22 bones that form the head of a vertebrate. It protects the brain and supports the structures of the face. The skull consists of the cranium, which encases the brain, and the facial bones, including the jaw and cheekbones.</string>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="DYV-aA-02F"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="ckM-xs-2wT" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="6O8-yb-1Kh"/>
+                <constraint firstItem="2EI-MW-NkM" firstAttribute="top" secondItem="ckM-xs-2wT" secondAttribute="bottom" constant="16" id="JJd-q1-dea"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="2EI-MW-NkM" secondAttribute="trailing" priority="999" constant="16" id="TBq-rK-arb"/>
+                <constraint firstItem="2EI-MW-NkM" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="kFM-Ev-K2G"/>
+                <constraint firstItem="ckM-xs-2wT" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="kIn-8v-zht"/>
+                <constraint firstAttribute="bottom" secondItem="2EI-MW-NkM" secondAttribute="bottom" priority="999" constant="16" id="mLU-g5-iyk"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="55" y="-333"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="skull3" width="626" height="626"/>
+    </resources>
+</document>

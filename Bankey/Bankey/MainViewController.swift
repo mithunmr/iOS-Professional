@@ -24,7 +24,7 @@ class MainViewController: UITabBarController {
         moneyVC.setTabBarImage(imageName: "arrow.left.arrow.right", title: "Move Money")
         moreVC.setTabBarImage(imageName: "ellipsis.circle", title: "More")
 
-        let summaryNC = UINavigationController(rootViewController: summaryVC)
+        let summaryNC = UINavigationController(rootViewController: summaryVC) 
         let moneyNC = UINavigationController(rootViewController: moneyVC)
         let moreNC = UINavigationController(rootViewController: moreVC)
 

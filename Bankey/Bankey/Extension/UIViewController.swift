@@ -8,8 +8,6 @@
 import UIKit
 import WebKit
 extension UIViewController {
-
-
     func setTabBarImage(imageName: String, title: String) {
         let configuration = UIImage.SymbolConfiguration(scale: .large)
         let image = UIImage(systemName: imageName, withConfiguration: configuration)
